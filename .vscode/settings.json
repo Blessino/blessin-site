@@ -1,5 +1,20 @@
 {
-    "emment.includeLanguages": {
-        "django-html": "html",
+    "python.languageServer": "Pylance",
+    "files.associations": {
+        "**/templates/**/*.html": "django-html",
+        
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
+    "editor.formatOnSave": true,
+    "[django-html]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        "editor.defaultFormatter": "monosans.djlint",
+        "djlint.enableLinting": true,
+        "djlint.profile": "django"
+    },
+    "emmet.includeLanguages": {"django-html": "html" }
 }
