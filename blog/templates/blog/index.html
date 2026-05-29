@@ -4,40 +4,26 @@
     my blogs
 {% endblock title %}
 {% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
     <link rel="stylesheet" href="{% static "blog/index.css" %}">
 {% endblock css_files %}
 {% block content %}
-    <header id="main-navigation">
-        <h1>Welcome to my blog</h1>
-        <nav>
-            <a href="">All Posts</a>
-        </nav>
-    </header>
     <section id="welcome">
         <header>
-            <img src="" alt="Blessin - The Author Of This Blog" />
+            <img src="https://placehold.co/320x240"
+                 height="320"
+                 width="240"
+                 alt="Blessin - The Author Of This Blog" />
             <h2>Blessin's Blog</h2>
         </header>
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit facilis itaque, dignissimos dolores aperiam sapiente expedita dicta cumque quas sequi earum iure a natus, rerum assumenda. At nisi dolore hic!
         </p>
     </section>
-    <section class="latest-posts">
+    <section id="latest-posts">
         <h2>My Latest Thought</h2>
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="" alt="placeholder-img" />
-                        <div class="post__content">
-                            <h3>Moutain Hicking</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis assumenda architecto dicta obcaecati blanditiis. Inventore fugit quod accusantium distinctio enim! Nostrum consequatur ea voluptatibus aliquam eum. Cupiditate, minima accusantium.
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            {% include "blog/includes/post.html" %}
         </ul>
     </section>
     <section id="about">
