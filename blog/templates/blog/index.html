@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
     my blogs
 {% endblock title %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock css_files %}
 {% block content %}
     <header id="main-navigation">
         <h1>Welcome to my blog</h1>
