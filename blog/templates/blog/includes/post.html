@@ -1,15 +1,13 @@
 <li>
     <article class="post">
-        <a href="{% url "post-detail-page" "the-mountain" %}">
-            <img src="https://placehold.co/320x240"
+        <a href="{% url "post-detail-page" post.slug %}">
+            <img src="{{ post.image }}"
                  height="320"
                  width="240"
-                 alt="placeholder-img" />
+                 alt="{{ post.title }}" />
             <div class="post__content">
-                <h3>Moutain Hicking</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis assumenda architecto dicta obcaecati blanditiis. 
-                </p>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
             </div>
         </a>
     </article>

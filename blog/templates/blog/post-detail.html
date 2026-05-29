@@ -1,34 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    This Posts Title
+    {{ post.title }}
 {% endblock title %}
 {% block css_files %}
     <link rel="stylesheet" href="{% static "blog/post-detail.css" %}">
 {% endblock css_files %}
 {% block content %}
     <section id="summary">
-        <h2>Post</h2>
+        <h2>{{ post.title }}</h2>
         <article>
-            <img src="https://placehold.co/240x320"
+            <img src="{{ post.image }}"
                  height="240"
                  width="320"
-                 alt="Post Title">
-            <address>By Blessin</address>
+                 alt="{{ post.title }}">
+            <address>By {{ post.author }}</address>
+            <div>
+                Last update on <time>{{ post.date|date:"d M Y" }}</time>
+            </div>
         </article>
     </section>
     <main>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro similique expedita repellendus, necessitatibus officiis in dicta perferendis eveniet accusamus iure quibusdam eius inventore deleniti ullam, tempore dolores quidem? Aliquam, eligendi.
-        </p>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro similique expedita repellendus, necessitatibus officiis in dicta perferendis eveniet accusamus iure quibusdam eius inventore deleniti ullam, tempore dolores quidem? Aliquam, eligendi.
-        </p>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro similique expedita repellendus, necessitatibus officiis in dicta perferendis eveniet accusamus iure quibusdam eius inventore deleniti ullam, tempore dolores quidem? Aliquam, eligendi.
-        </p>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro similique expedita repellendus, necessitatibus officiis in dicta perferendis eveniet accusamus iure quibusdam eius inventore deleniti ullam, tempore dolores quidem? Aliquam, eligendi.
-        </p>
+        <p>{{ post.content|linebreaks }}</p>
     </main>
 {% endblock content %}
