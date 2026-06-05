@@ -7,9 +7,9 @@ all_posts = [
     {
         "slug": "hike-in-the-mountains",
         "image": "https://placehold.co/320x240",
-        "author": "Maximilian",
+        "author": "Blessing",
         "date": date(2021, 7, 21),
-        "title": "consectetur adipisicing elit",
+        "title": "hike in the mountains",
         "excerpt": "Lorem ipsum dolor sit amet consectetur adipisicing elit officiis nobisaperiam est praesentium,!",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
@@ -30,7 +30,7 @@ all_posts = [
         "image": "https://placehold.co/320x240",
         "author": "Maximilian",
         "date": date(2022, 3, 10),
-        "title": "quos iste consequuntur omnis!",
+        "title": "programming is fun!",
         "excerpt": "quos iste consequuntur omnis exercitationem quamvelit labore vero culpa ad mollitia?...",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
@@ -51,7 +51,7 @@ all_posts = [
         "image": "https://placehold.co/320x240",
         "author": "Maximilian",
         "date": date(2020, 8, 5),
-        "title": "Lorem ipsum dolor sit amet",
+        "title": "into the woods",
         "excerpt": "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
