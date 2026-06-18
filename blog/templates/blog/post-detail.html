@@ -14,7 +14,7 @@
         </div>
         <article>
             {% comment %} {{"blog/images/"|add:post.image_name}} {% endcomment %}
-            <img src="{{ post.image_name }}"
+            <img src="{{ post.image.url }}"
                  height="240"
                  width="320"
                  alt="{{ post.title }}">
