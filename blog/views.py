@@ -48,27 +48,29 @@ class SinglePostView(View):
         context = {
             "post": post,
             "post_tags": post.tags.all(),
-            "comment_form": CommentForm()
+            "comment_form": CommentForm(),
+            "comments": post.comments.all()
         }
         return render(request, "blog/post-detail.html", context)
 
     def post(self, request, slug):
-         comment_form = CommentForm(request.POST)
-         post = Post.objects.get(slug=slug)
+        comment_form = CommentForm(request.POST)
+        post = Post.objects.get(slug=slug)
 
-         if comment_form.is_valid():
-          comment = comment_form.save(commit=False)
-          comment.post = post
-          comment.save()
-          
-          return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
 
-         context = {
-          "post": post,
-          "post_tags": post.tags.all(),
-          "comment_form": comment_form
+            return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+
+        context = {
+            "post": post,
+            "post_tags": post.tags.all(),
+            "comment_form": comment_form,
+            "comments": post.comments.all()
         }
-         return render(request, "blog/post-detail.html", context)
+        return render(request, "blog/post-detail.html", context)
 
 
 # def post_detail(request, slug):
@@ -77,3 +79,18 @@ class SinglePostView(View):
 #         "post": identified_post,
 #         "post_tags": identified_post.tags.all()
 #     })
+
+
+class ReadLaterView(View):
+    def post(self, request):
+        stored_posts = request.session.get("stored_posts")
+
+        if stored_posts is None:
+            stored_posts = []
+
+        post_id = int(request.POST["post_id"])
+
+        if post_id not in stored_posts:
+            stored_posts.append(post_id)
+
+        return HttpResponseRedirect("/")
